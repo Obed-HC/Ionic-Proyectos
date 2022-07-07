@@ -1,3 +1,4 @@
+<!-- 
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
@@ -17,4 +18,40 @@
     <strong>Ready to create an app?</strong>
     <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
   </div>
+</ion-content>
+-->
+
+<ion-content>
+
+  <ion-slides pager = "true" [options]="slideOpt">
+
+    <ion-slide>
+      <ion-icon name="close"></ion-icon>
+      <h1>Slide 1</h1>
+      <h2>sub titulo</h2>
+      <ion-icon name="musical-note-outline"></ion-icon>
+      <!-- <img src = "assets/images/slide1.jpg"/> -->
+      <p>Descripción de esta imagen</p>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-icon name="close"></ion-icon>
+      <h1>Slide 2</h1>
+      <h2>sub titulo</h2>
+      <!--  <ion-icon name="musical-notes-outline"></ion-icon> -->
+      <img src = "assets/images/slide2.jpg"/>
+      <p>Descripción de esta imagen</p>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-icon name="close"></ion-icon>
+      <h1>Slide 3</h1>
+      <h2>sub titulo</h2>
+      <ion-icon name="play-outline"></ion-icon>
+      <!-- <img src = "assets/images/slide3.jpg"/> -->
+      <p>Descripción de esta imagen</p>
+    </ion-slide>
+
+  </ion-slides>
+
 </ion-content>
