@@ -17,8 +17,8 @@
     
                       <ion-item>
                         
-                        <ion-label class = "ion-text-capitalize" position="floating"><ion-icon name="person" class="icon-login"></ion-icon> email
-                          
+                        <ion-label class = "ion-text-capitalize" position="floating">
+                          <ion-icon name="person"></ion-icon> email
                         </ion-label>
                         <ion-input formControlName="email"></ion-input>
                       </ion-item>
@@ -29,14 +29,16 @@
                           *ngIf="loginForm.get('email').hasError(validation.type) && 
                           (loginForm.get('email').dirty || loginForm.get('email').touched)"
                           class="ion-padding-left">
-                            {{validation.message}}
+                            {{validation.message}} *
                           </div>
                         </ng-container>
                       </div>
                   
                       <ion-item>
-                        <ion-label class = "ion-text-capitalize" position="floating">contraseña</ion-label>
-                        <ion-input formControlName="password"></ion-input>
+                        <ion-label class = "ion-text-capitalize" position="floating">
+                          <ion-icon name="lock-closed-outline"></ion-icon> contraseña
+                        </ion-label>
+                        <ion-input type="password" formControlName="password"></ion-input>
                       </ion-item>
                   
                       <div class="mssg">
@@ -45,7 +47,7 @@
                           *ngIf="loginForm.get('password').hasError(validation.type) && 
                           (loginForm.get('password').dirty || loginForm.get('password').touched)"
                           class="ion-padding-left">
-                            {{validation.message}}
+                            {{validation.message}} *
                           </div>
                         </ng-container>
                       </div>
