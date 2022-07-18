@@ -1,66 +1,54 @@
-#container {
-    text-align: center;
+ion-slides {
+  height: 100%;
+  background-color: white;
+  max-width: 800px;
+}
   
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
+.swiper-slide {
+  display: block;
+  margin-bottom: 60px;
+  background-color: var(--slide-color-background); // Variable creada de themes en variables.scss
+}
+  
+ion-slide > h1 {
+margin: 30px 20px 20px 50px;
+color: #CEC8FA;
+text-align: center;
+font-size: 25px;
+}
+
+ion-slide > h2 {
+  margin: 30px 20px 20px 20px;
+  color: var(--slide-color-body-slide); // Variable creada de themes en variables.scss
+  text-align: center;
+  font-size: 18px;
   }
   
-  #container strong {
-    font-size: 20px;
-    line-height: 26px;
+ion-slide > p {
+  font-style: italic;
+  font-size: 22px;
+  padding: 20px 20px 20px 20px;
+  border-color: dimgrey;
+  border-style: dashed;
+  color: #CFC9FF;
+}
+  
+ion-slide > ion-icon {
+color: var(--slide-color-body-slide); // Variable creada de themes en variables.scss
+font-size: 50px;
+
+}
+  
+ion-slide > ion-icon[name="close"]{
+  margin-top: 10px;
+  margin-right: 10px;
+  float: right;
+  color: var(--slide-color-icon-close); // Variable creada de themes en variables.scss
+  font-size: 40px;
   }
   
-  #container p {
-    font-size: 16px;
-    line-height: 22px;
-  
-    color: #8c8c8c;
-  
-    margin: 0;
+ion-slide > img {
+  width: 370px;
+  height: 220px;
   }
-  
-  #container a {
-    text-decoration: none;
-  }
-  
-  ion-slides {
-    height: 100%;
-    background-color: white;
-    max-width: 800px;
-  }
-  
-  .swiper-slide {
-    display: block;
-    margin-bottom: 60px;
-    background-color: var(--slide-color-background);
-  }
-  
-  ion-slide > h1, h2 {
-  margin: 20px 20px 20px 20px;
-  color: gray;
-  }
-  
-  ion-slide > p {
-    font-style: italic;
-    font-size: 22px;
-    padding: 20px 20px 20px 20px;
-    border-color: black;
-    border-style: dashed;
-  }
-  
-  ion-slide > ion-icon {
-  color: red;
-  font-size: 50px;
-  
-  }
-  
-  ion-slide > ion-icon[name="close"]{
-    float: right;
-    color: black;
-    font-size: 40px;
-    }
-  
   

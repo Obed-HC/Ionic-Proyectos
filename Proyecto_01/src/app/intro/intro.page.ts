@@ -17,31 +17,31 @@ export class IntroPage {
 
   slides = [
     {
-      tittle: "Titulo 1",
-      subtittle: "Sub tittle 1",
-      icon: "ion-headphone",  /* https://ionic.io/ionicons/v2 */
-      img: "assets/images/slide1.jpg",
+      tittle: "Artistas",
+      subtittle: "Los mejores artistas del momento",
+      icon: "people-outline",  /* https://ionic.io/ionicons/v2 */
+      img: "https://cdn.pixabay.com/photo/2013/07/13/13/17/karaoke-160752_960_720.png",
       description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     },
     {
-      tittle: "Titulo 2",
-      subtittle: "Sub tittle 2",
-      icon: "musical-note-outline",
-      img: "assets/images/slide2.jpg",
-      description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    },
-    {
-      tittle: "Titulo 3",
-      subtittle: "Sub tittle 3",
+      tittle: "Play List",
+      subtittle: "Guarda tus canciones favoritas",
       icon: "play-outline",
-      img: "assets/images/slide3.jpg",
+      img: "https://cdn.pixabay.com/photo/2016/11/19/00/12/wave-1837426_960_720.png",
       description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     },
     {
-      tittle: "Titulo 4",
-      subtittle: "Sub tittle 4",
-      icon: "ion-ipod",
-      img: "assets/images/slide4.jpg",
+      tittle: "Clasificación",
+      subtittle: "Clasifica tus canciones más escuchadas",
+      icon: "musical-note-outline",
+      img: "https://cdn.pixabay.com/photo/2018/09/08/11/09/jazz-3662296_960_720.png",
+      description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    {
+      tittle: "Comenta",
+      subtittle: "Envía comentarios sobre las canciones",
+      icon: "chatbox-ellipses-outline",
+      img: "https://cdn.pixabay.com/photo/2017/02/25/23/51/abstract-2099064_960_720.png",
       description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     }
   ]
