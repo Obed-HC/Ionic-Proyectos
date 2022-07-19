@@ -1,5 +1,5 @@
 
-.grid1 {
+.grid{
     height: 100%;
     padding: 0px;
     background-color: var(--slide-color-body-slide); // Variable creada de themes en variables.scss
@@ -13,10 +13,6 @@
     -webkit-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
-}
-
-.rad{
-    border-radius: 10px;
 }
 
 ion-button {
