@@ -50,6 +50,9 @@ export class IntroPage {
    }
 
    ngOnInit() : void{
+   }
+
+   /*ngOnInit() : void{
     this.showe().then( x=>{
       if(x){
         this.router.navigateByUrl("/home")
@@ -65,5 +68,11 @@ export class IntroPage {
   finish(){
     this.storage.set("isIntroShowed", true);
     this.router.navigateByUrl("/home");
+  }
+  */
+
+  finish(){
+    this.storage.set("isIntroShowed", true);
+    this.router.navigateByUrl("/login");
   }
 }

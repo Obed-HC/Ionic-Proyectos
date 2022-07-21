@@ -21,6 +21,8 @@ export class AuthenticateService {
           rejects("Login Fallido");
         }
 
+      }).catch(err=>{
+        return rejects("Fallo en el Login");
       });
     });
   }

@@ -16,11 +16,17 @@
     </ion-header>
 
     <ion-content>
-      <ion-item (click)="logout()">Cerrar Sesión</ion-item>
-      <ion-item>Funcion 2</ion-item>
+      
+      <ion-item> <ion-icon name="diamond-outline"  slot="start"></ion-icon>Funcion 2</ion-item>
       <ion-item>Funcion 3</ion-item>
       <ion-item>Funcion 4</ion-item>
     </ion-content>
+
+    <ion-footer>
+      <ion-item (click)="logout()">
+        <ion-icon name="log-out-outline"  slot="start"></ion-icon> Cerrar Sesión</ion-item>
+
+    </ion-footer>
 
 
   </ion-menu>
