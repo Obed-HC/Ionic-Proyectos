@@ -14,13 +14,25 @@
   <ion-slides [options]="slideOps">
 
     <ion-slide *ngFor="let artist of artists">
-      <ion-avatar>
-        <img src="https://via.placeholder.com/150/0000FF/808080"/>
+      <ion-avatar (click)="showSongs(artist)">
+        <img src={{artist.image}} />
         <span>{{artist.name}}</span>
       </ion-avatar>
     </ion-slide>
 
   </ion-slides>
 
+  <h1>Albums</h1>
+
+  <ion-slides [options]="slideOps">
+
+    <ion-slide *ngFor="let album of albums">
+      <ion-avatar class="square-avatar">
+        <img src={{album.image}} />
+        <span>{{album.name}}</span>
+      </ion-avatar>
+    </ion-slide>
+
+  </ion-slides>
 
 </ion-content>
