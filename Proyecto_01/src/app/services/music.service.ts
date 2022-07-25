@@ -34,5 +34,11 @@ export class MusicService {
     );
   }
 
+  /*================================ Tarea viernes 15-07-2022 ================================ */
+  getAlbumTracks(album_id) {
+    return fetch(`${this.url_server}tracks/album/${album_id}`, { mode: 'cors' , headers: this.header} ).then(
+      (albums) => albums.json()
+    );
+  }
 
 }

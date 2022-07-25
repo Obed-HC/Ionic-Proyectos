@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { MusicService } from '../services/music.service';
 import { SongsModalPage } from '../songs-modal/songs-modal.page';
+import { AlbumsModalPage } from '../albums-modal/albums-modal.page';
 
 @Component({
   selector: 'app-home',
@@ -57,6 +58,23 @@ export class HomePage {
       componentProps: {
         songs: songs,
         artist: artist.name
+      }
+    });
+    modal.onDidDismiss().then( dataReturned => {
+      this.song = dataReturned.data
+    })
+    return await modal.present();
+    
+  }
+
+  /*================================ Tarea viernes 15-07-2022 ================================ */
+  async showAlbums(album) {
+    const items = await this.musicService.getAlbumTracks(album.id);
+    const modal = await this.modalController.create({
+      component: AlbumsModalPage,
+      componentProps: {
+        items: items,
+        album: album.name
       }
     });
     modal.onDidDismiss().then( dataReturned => {

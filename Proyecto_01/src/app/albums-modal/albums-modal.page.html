@@ -1,0 +1,24 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{album}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="closeModal()">
+        Cerrar
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let item of items; index as i" (click)="selectSong(item)">
+      <ion-avatar>
+        {{ i + 1 }}
+      </ion-avatar>
+      <ion-label>
+        <h2>{{item.name}}</h2>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
