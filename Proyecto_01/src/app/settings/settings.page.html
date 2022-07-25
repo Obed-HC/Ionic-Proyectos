@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Configuración</ion-title>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="success-background">
+    <ion-avatar (click)="takePhoto()">
+      <img [src]="userImage" *ngIf="!photo"/>
+      <img [src]="photo" *ngIf="photo"/>
+    </ion-avatar>
+
+    <h1>Obed Huamani Condori</h1>
+    <h2>obed@gmail.com</h2>
+
+    <ion-grid>
+      <ion-row class="ion-align-items-center ion-text-center row-header">
+        <ion-col>24</ion-col>
+        <ion-col>15</ion-col>
+        <ion-col>5</ion-col>
+      </ion-row>
+      <ion-row class="ion-align-items-center ion-text-center">
+        <ion-col>Canciones Favoritas</ion-col>
+        <ion-col>Seguidores</ion-col>
+        <ion-col>Artistas Favoritos</ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
