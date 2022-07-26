@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { NavController } from '@ionic/angular';
 import { Storage } from '@ionic/storage-angular';
 import { AuthenticateService } from '../services/authenticate.service';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-register',
@@ -10,8 +11,6 @@ import { AuthenticateService } from '../services/authenticate.service';
   styleUrls: ['./register.page.scss'],
 })
 export class RegisterPage implements OnInit {
-
-  errorMessage: any;
 
   registerForm: FormGroup;
 
@@ -33,6 +32,7 @@ export class RegisterPage implements OnInit {
   }
 
   constructor(
+    private alertController: AlertController,
     private formBuilder: FormBuilder,
     private authService : AuthenticateService,
     private navCtrl: NavController,
@@ -75,14 +75,24 @@ export class RegisterPage implements OnInit {
 
   register(registerFormValues){
     this.authService.register(registerFormValues).then(()=>{
-      this.errorMessage = "";
       this.navCtrl.navigateBack("/login");
     }).catch(err=>{
-      this.errorMessage = err;
+      this.presentAlert("Opps", "Hubo un error", err)
     })
   }
 
   goToLogin(){
     this.navCtrl.navigateBack("/login");
   }
+
+  async presentAlert(header, subHeader,message) {
+    const alert = await this.alertController.create({
+      header: header,
+      subHeader: subHeader,
+      message: message,
+      buttons: ['OK']
+    });
+    await alert.present();
+  }
+  
 }

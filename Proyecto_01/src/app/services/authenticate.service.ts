@@ -46,13 +46,13 @@ export class AuthenticateService {
 
       this.http.post(`${this.url_server}login`, params, this.httpOptions).subscribe((data: any) => {
         if (data.status = "OK") {
-          accept(data.msg);
+          accept(data);
         }else{
-          rejects(data.errors);
+          rejects("Email o Contraseña Invalida");
         }
       },
       (error) => {
-        return rejects("Fallo en el Login")
+        return rejects("Error en la peticion")
       });
     });
 
@@ -79,4 +79,5 @@ export class AuthenticateService {
     });
 
   }
+
 }
