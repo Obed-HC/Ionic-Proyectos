@@ -55,7 +55,6 @@ export class SearchModalPage implements OnInit {
     /*================================ Tarea jueves 21-07-2022 ================================ */
 
     await this.modalController.dismiss(song);
-    this.closeModal();
   }
 
   pause() {
