@@ -33,6 +33,10 @@ const routes: Routes = [
     path: 'albums-modal',
     loadChildren: () => import('./albums-modal/albums-modal.module').then( m => m.AlbumsModalPageModule)
   },
+  {
+    path: 'search-modal',
+    loadChildren: () => import('./search-modal/search-modal.module').then( m => m.SearchModalPageModule)
+  },
 ];
 
 @NgModule({
