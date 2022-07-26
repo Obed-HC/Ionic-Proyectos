@@ -21,6 +21,7 @@ export class AuthenticateService {
   }
 
   loginUser(credentials){
+    /*
     return new Promise((accept, rejects)=>{
 
       this.storage.get("user").then((data)=>{
@@ -35,6 +36,26 @@ export class AuthenticateService {
         return rejects("Fallo en el Login");
       });
     });
+    */
+
+    let params = {
+      "user": credentials
+    }
+
+    return new Promise((accept, rejects)=>{
+
+      this.http.post(`${this.url_server}login`, params, this.httpOptions).subscribe((data: any) => {
+        if (data.status = "OK") {
+          accept(data.msg);
+        }else{
+          rejects(data.errors);
+        }
+      },
+      (error) => {
+        return rejects("Fallo en el Login")
+      });
+    });
+
   }
   
   register(userData){
@@ -54,9 +75,8 @@ export class AuthenticateService {
       },
       (error) => {
         reject("Error en la peticion")
-      }
-      )
       });
+    });
 
   }
 }

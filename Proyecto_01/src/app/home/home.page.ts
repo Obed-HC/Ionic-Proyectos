@@ -12,6 +12,7 @@ import { SearchModalPage } from '../search-modal/search-modal.page';
 })
 export class HomePage {
 
+
   artists: any;
   artistsFromJson: any;
   albums:any;
@@ -116,10 +117,16 @@ export class HomePage {
   }
 
   async openSearchModal(){
+
+    /*================================ Tarea jueves 21-07-2022 ================================ */
+    
     const modal = await this.modalController.create({
       component: SearchModalPage
     });
-    modal.present();
+    modal.onDidDismiss().then( dataReturned => {
+      this.song = dataReturned.data
+    })
+    return await modal.present();
   }
 
 }

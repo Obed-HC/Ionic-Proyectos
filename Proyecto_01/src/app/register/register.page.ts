@@ -11,6 +11,8 @@ import { AuthenticateService } from '../services/authenticate.service';
 })
 export class RegisterPage implements OnInit {
 
+  errorMessage: any;
+
   registerForm: FormGroup;
 
   validation_messages = {
@@ -73,7 +75,10 @@ export class RegisterPage implements OnInit {
 
   register(registerFormValues){
     this.authService.register(registerFormValues).then(()=>{
+      this.errorMessage = "";
       this.navCtrl.navigateBack("/login");
+    }).catch(err=>{
+      this.errorMessage = err;
     })
   }
 

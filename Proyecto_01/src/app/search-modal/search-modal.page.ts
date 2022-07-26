@@ -42,20 +42,25 @@ export class SearchModalPage implements OnInit {
     }
   }
 
-  play( song ) {
-    if (this.currentSong) {
-      this.pause();
-    }
-    this.song = song;
-    this.currentSong = new Audio(this.song.preview_url);
-    this.currentSong.play();
-    this.currentSong.addEventListener('ended', () => this.song.playing = false);
-    this.song.playing = true;
+  async play( song ) {
+    // if (this.currentSong) {
+    //   this.pause();
+    // }
+    // this.song = song;
+    // this.currentSong = new Audio(this.song.preview_url);
+    // this.currentSong.play();
+    // this.currentSong.addEventListener('ended', () => this.song.playing = false);
+    // this.song.playing = true;
+
+    /*================================ Tarea jueves 21-07-2022 ================================ */
+
+    await this.modalController.dismiss(song);
+    this.closeModal();
   }
 
   pause() {
-    this.currentSong.pause();
-    this.song.playing = false;
+    // this.currentSong.pause();
+    // this.song.playing = false;
   }
 
 }
