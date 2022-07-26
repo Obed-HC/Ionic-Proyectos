@@ -17,7 +17,7 @@ export class RegisterPage implements OnInit {
     name: [
       {type : "required", message: "El nombre es obligatorio"},
     ],
-    lastname: [
+    last_name: [
       {type : "required", message: "Los apellidos son obligatorios"},
     ],
     email: [
@@ -44,7 +44,7 @@ export class RegisterPage implements OnInit {
           Validators.required,
         ])
       ),
-      lastname: new FormControl(
+      last_name: new FormControl(
         "",
         Validators.compose([
           Validators.required,

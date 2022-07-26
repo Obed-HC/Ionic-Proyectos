@@ -43,14 +43,14 @@
                           <ion-label class = "ion-text-capitalize" position="floating">
                             <ion-icon name="person"></ion-icon> apellidos
                           </ion-label>
-                          <ion-input formControlName="lastname"></ion-input>
+                          <ion-input formControlName="last_name"></ion-input>
                         </ion-item>
 
                         <div class="mssg">
-                          <ng-container  *ngFor="let validation of validation_messages.lastname">
+                          <ng-container  *ngFor="let validation of validation_messages.last_name">
                             <div 
-                            *ngIf="registerForm.get('lastname').hasError(validation.type) && 
-                            (registerForm.get('lastname').dirty || registerForm.get('lastname').touched)"
+                            *ngIf="registerForm.get('last_name').hasError(validation.type) && 
+                            (registerForm.get('last_name').dirty || registerForm.get('last_name').touched)"
                             class="ion-padding-left">
                               {{validation.message}} *
                             </div>

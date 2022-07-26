@@ -3,6 +3,7 @@ import { ModalController } from '@ionic/angular';
 import { MusicService } from '../services/music.service';
 import { SongsModalPage } from '../songs-modal/songs-modal.page';
 import { AlbumsModalPage } from '../albums-modal/albums-modal.page';
+import { SearchModalPage } from '../search-modal/search-modal.page';
 
 @Component({
   selector: 'app-home',
@@ -98,7 +99,7 @@ export class HomePage {
     this.song.playing = false;
   }
 
-  parseTime(time = "0.00"){
+  parseTime(time : any = "0.00"){
     if(time){
       const partTime = parseInt(time.toString().split(".")[0], 10);
       let minutes = Math.floor(partTime / 60).toString();
@@ -112,6 +113,13 @@ export class HomePage {
       return minutes + ":" + seconds;
 
     }
+  }
+
+  async openSearchModal(){
+    const modal = await this.modalController.create({
+      component: SearchModalPage
+    });
+    modal.present();
   }
 
 }
