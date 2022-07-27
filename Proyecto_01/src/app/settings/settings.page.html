@@ -10,8 +10,8 @@
 <ion-content>
   <div class="success-background">
     <ion-avatar (click)="takePhoto()">
-      <img [src]="userImage" *ngIf="!photo"/>
-      <img [src]="photo" *ngIf="photo"/>
+      <img [src]="userImage"  *ngIf="!user.image"/>
+    <img [src]="user.image"  *ngIf="user.image"/>
     </ion-avatar>
 
   <h1 (click)="updateInfo()">{{user.name}} {{user.last_name}}</h1>
