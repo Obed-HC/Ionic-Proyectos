@@ -103,21 +103,40 @@ export class SettingsPage implements OnInit {
   async updateInfo() {
     const alert = document.createElement('ion-alert');
     alert.header = 'Actualizar Nombre';
-    alert.buttons = ['Actualizar'];
     alert.inputs = [
       {
+        name: 'name',
         placeholder: 'Nombres (max 30 caracteres)',
         attributes: {
-          maxlength: 8
+          maxlength: 30
         }
       },
       {
+        name: 'last_name',
         placeholder: 'Apellidos (max 50 caracteres)',
         attributes: {
-          maxlength: 8
+          maxlength: 50
         }
       },
     ];
+    alert.buttons = [
+      {
+        text: 'Cancelar',
+        // cssClass: 'alert-button-cancel'
+        role: 'cancel',
+        cssClass: 'secondary',
+      },
+      {
+        text: 'Actualizar',
+        cssClass: 'alert-button-confirm',
+        handler: (alertData) => {
+          // console.log(alertData.name);
+          // console.log(alertData.last_name);
+          this.updateUser({"name": alertData.name, "last_name": alertData.last_name});
+        }
+      }
+    ];
+    // alert.buttons = ['Actualizar'];
 
     document.body.appendChild(alert);
     await alert.present();
@@ -162,5 +181,19 @@ export class SettingsPage implements OnInit {
       })
     } ) 
   }
+
+  unfollowUser(followee_id){
+
+    this.userService.unfollowUser(followee_id, this.user_id).subscribe( async (resp: any) => {
+       this.presentAlert("Unfollow","",resp.msg)
+       this.users.forEach( user  => {
+         if (followee_id == user.id){
+           user["follow"] = false
+           let newFolleew = parseInt(document.getElementById("followee").textContent) - 1
+           document.getElementById("followee").textContent = newFolleew.toString();
+         }
+       })
+     } ) 
+   }
 
 }
