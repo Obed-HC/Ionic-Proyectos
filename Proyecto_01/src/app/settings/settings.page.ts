@@ -28,7 +28,7 @@ export class SettingsPage implements OnInit {
   goBack = false;
   users: any;
   searching = false;
-  text = "Digite nombre de usuario para buscar"
+  text = "Digite nombre de usuario para buscar";
 
   constructor( 
                 private authService: AuthenticateService,
@@ -98,6 +98,29 @@ export class SettingsPage implements OnInit {
       this.user.following_users = data.user.following_users
       this.user.image = data.user.image
     })
+  }
+
+  async updateInfo() {
+    const alert = document.createElement('ion-alert');
+    alert.header = 'Actualizar Nombre';
+    alert.buttons = ['Actualizar'];
+    alert.inputs = [
+      {
+        placeholder: 'Nombres (max 30 caracteres)',
+        attributes: {
+          maxlength: 8
+        }
+      },
+      {
+        placeholder: 'Apellidos (max 50 caracteres)',
+        attributes: {
+          maxlength: 8
+        }
+      },
+    ];
+
+    document.body.appendChild(alert);
+    await alert.present();
   }
 
   getUsers(keyword: string){

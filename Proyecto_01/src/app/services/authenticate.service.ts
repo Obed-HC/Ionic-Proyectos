@@ -7,8 +7,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class AuthenticateService {
 
-  header = {'Access-Control-Request-Headers': '*',  'Content-Type': 'application/json'};
-
   url_server = "https://music-back-seminario.herokuapp.com/";
 
   httpOptions = {
